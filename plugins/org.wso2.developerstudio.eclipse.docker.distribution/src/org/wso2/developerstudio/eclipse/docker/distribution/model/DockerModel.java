@@ -25,8 +25,64 @@ import org.wso2.developerstudio.eclipse.platform.core.project.model.ProjectDataM
  * docker repository )
  */
 public class DockerModel extends ProjectDataModel {
+	
+	// jlp added these and getters and setters
+	String dockerTargetTag;
+	String dockerTargetRepository;
+	String dockerRemoteRepository;
+	String dockerRemoteTag;
 
-    public boolean setModelPropertyValue(String key, Object data) throws ObserverFailedException {
+	
+
+    public String getDockerTargetTag() {
+		return dockerTargetTag;
+	}
+
+
+
+	public void setDockerTargetTag(String dockerTargetTag) {
+		this.dockerTargetTag = dockerTargetTag;
+	}
+
+
+
+	public String getDockerTargetRepository() {
+		return dockerTargetRepository;
+	}
+
+
+
+	public void setDockerTargetRepository(String dockerTargetRepository) {
+		this.dockerTargetRepository = dockerTargetRepository;
+	}
+
+
+
+	public String getDockerRemoteRepository() {
+		return dockerRemoteRepository;
+	}
+
+
+
+	public void setDockerRemoteRepository(String dockerRemoteRepository) {
+		this.dockerRemoteRepository = dockerRemoteRepository;
+	}
+
+
+
+	public String getDockerRemoteTag() {
+		return dockerRemoteTag;
+	}
+
+
+
+	public void setDockerRemoteTag(String dockerRemoteTag) {
+		this.dockerRemoteTag = dockerRemoteTag;
+	}
+
+
+
+	public boolean setModelPropertyValue(String key, Object data) throws ObserverFailedException {
         super.setModelPropertyValue(key, data);
         if (key.equalsIgnoreCase(DockerProjectConstants.DOCKER_TAG_KEY)) {
             setDockerTargetTag(data.toString());
